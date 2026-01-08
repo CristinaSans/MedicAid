@@ -205,7 +205,7 @@ with tab3:
             st.warning("Has de seleccionar malaltia")
                 
         if st.button('Borrar Malaltia'):
-            c.execute("""DELETE FROM Malalties WHERE Id_malaltia= ?""", (codi_mal))
+            c.execute("""DELETE FROM Malalties WHERE Id_malaltia= ?""", (codi_mal,))
             conn.commit()
             st.success("Malaltia eliminada")
             
@@ -310,5 +310,6 @@ with tab4:
             c.execute("DELETE FROM Usuari_pauta WHERE Id_pauta = ?", (pauta_id,))
             conn.commit()
             st.success(f"Pauta '{pauta_sel}' eliminada correctament!")
+
 
 
