@@ -6,7 +6,7 @@ st.set_page_config(page_title="Auxiliars", page_icon="📝")
 st.sidebar.header("Auxiliars")
 
 #--- conecció BD
-conn = sqlite3.connect(".\dat\MedicAid.db")
+conn = sqlite3.connect("./dat/MedicAid.db")
 c = conn.cursor()
 
 # --- INTERFÍCIE STREAMLIT ---
@@ -304,3 +304,4 @@ with tab4:
             c.execute("DELETE FROM Usuari_pauta WHERE Id_pauta = ?", (pauta_id,))
             conn.commit()
             st.success(f"Pauta '{pauta_sel}' eliminada correctament!")
+
