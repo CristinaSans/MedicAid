@@ -122,7 +122,7 @@ with  tab2:
             data = [list(row) for row in rows]
             df = pd.DataFrame(data, columns=headers)
             st.dataframe(df,hide_index= True)
-            st.write(f"Nombre de fàrmacs: {len(rows)}")
+            st.write(f"Nombre de tipus: {len(rows)}")
         else:
             st.info("No hi ha tipus guardats")
                 
@@ -310,6 +310,7 @@ with tab4:
             c.execute("DELETE FROM Usuari_pauta WHERE Id_pauta = ?", (pauta_id,))
             conn.commit()
             st.success(f"Pauta '{pauta_sel}' eliminada correctament!")
+
 
 
 
