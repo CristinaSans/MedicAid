@@ -111,7 +111,7 @@ elif menu_us == "Modificar usuari":
                  c.execute("DELETE FROM Malalties_usuari WHERE Id_user=?", (usuari_id,))
                  for mal in malalties_seleccionades:
                     mal_id = malalties_dict[mal]
-                    c.execute("INSERT INTO Malalties_usuari (Id_user, Id_malatia) VALUES (?, ?)", (usuari_id, mal_id))
+                    c.execute("INSERT INTO Malalties_usuari (Id_user, Id_malaltia) VALUES (?, ?)", (usuari_id, mal_id))
                     
                  conn.commit()
                  st.success("Usuari actualitzat correctament amb les noves malalties!")
@@ -147,5 +147,6 @@ elif menu_us == "Borrar usuari":
     else:
 
         st.info("No hi ha usuaris per eliminar")
+
 
 
