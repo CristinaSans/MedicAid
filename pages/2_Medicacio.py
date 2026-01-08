@@ -6,7 +6,7 @@ st.set_page_config(page_title="Medicacio", page_icon="📈")
 st.sidebar.header("Medicacio")
 
 #--- conecció BD
-conn = sqlite3.connect(".\dat\MedicAid.db")
+conn = sqlite3.connect("./dat/MedicAid.db")
 c = conn.cursor()
 
 # --- INTERFÍCIE STREAMLIT ---
@@ -182,3 +182,4 @@ elif menu_med == "Borrar medicació":
             st.success("Medicació eliminada correctament!")
     else:
         st.info("No hi ha medicacions per eliminar")
+
