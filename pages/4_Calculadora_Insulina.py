@@ -19,7 +19,7 @@ def calcula_insulina(glucosa, norm, alt, moltAlt):
     return msg
 
 #--- conecció BD
-conn = sqlite3.connect(".\dat\MedicAid.db")
+conn = sqlite3.connect("./dat/MedicAid.db")
 c = conn.cursor()
 # --- INTERFÍCIE STREAMLIT ---
 st.header("Calculadora Insulina:")
@@ -55,4 +55,5 @@ else:
 if st.button("Calcular"):
     
    st.write(calcula_insulina(glucosa,norm,alt,moltAlt))
+
     
