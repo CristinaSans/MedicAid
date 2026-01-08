@@ -5,6 +5,6 @@ st.set_page_config(
 )
 st.title("Medic Aid", text_alignment= "center")
 
-st.image(".\dat\im_inici.png",width= 700)
+st.image("./dat/im_inici.png",width= 700)
 
 st.header("Benvinguts!",text_alignment = "center")
