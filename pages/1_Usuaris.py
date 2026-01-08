@@ -5,7 +5,7 @@ import pandas as pd
 st.set_page_config(page_title="Usuaris", page_icon="👥")
 st.sidebar.header("Usuaris")
 #--- conecció BD
-conn = sqlite3.connect(".\dat\MedicAid.db")
+conn = sqlite3.connect("./dat/MedicAid.db")
 c = conn.cursor()
 
 # --- INTERFÍCIE STREAMLIT ---
@@ -145,4 +145,5 @@ elif menu_us == "Borrar usuari":
             conn.commit()
             st.success("Usuari i dades associades eliminats correctament!")
     else:
+
         st.info("No hi ha usuaris per eliminar")
