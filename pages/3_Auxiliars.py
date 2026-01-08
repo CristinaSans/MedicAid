@@ -118,7 +118,10 @@ with  tab2:
             
         rows = c.execute("SELECT * FROM Tipus_medicacio").fetchall()
         if rows:
-            st.dataframe(rows,hide_index= True)
+            headers = ("Id tipus","Nom")
+            data = [list(row) for row in rows]
+            df = pd.DataFrame(data, columns=headers)
+            st.dataframe(df,hide_index= True)
             st.write(f"Nombre de fàrmacs: {len(rows)}")
         else:
             st.info("No hi ha tipus guardats")
@@ -166,7 +169,10 @@ with tab3:
         
         rows = c.execute("SELECT * FROM Malalties").fetchall()
         if rows:
-            st.dataframe(rows, hide_index= True)
+            headers = ("Id","Nom")
+            data = [list(row) for row in rows]
+            df = pd.DataFrame(data, columns=headers)
+            st.dataframe(df,hide_index= True)
             st.write(f"Nombre de malalties: {len(rows)}")
         else:
             st.info("No hi ha dades")
@@ -304,4 +310,5 @@ with tab4:
             c.execute("DELETE FROM Usuari_pauta WHERE Id_pauta = ?", (pauta_id,))
             conn.commit()
             st.success(f"Pauta '{pauta_sel}' eliminada correctament!")
+
 
