@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
-
+import matplotlib.dates as mdates
 
 st.set_page_config(page_title="Seguiment Glucosa", page_icon="📈")
 st.sidebar.header("Seguiment glucosa")
@@ -109,6 +109,7 @@ if uploaded_file is not None:
     ax2.axhline(hipo, color="red", linestyle="--", alpha=0.5)
     ax2.axhline(hiper, color="orange", linestyle="--", alpha=0.5)
 
+    ax2.xaxis.set_major_formatter(mdates.DateFormatter("%H:%M"))
     ax2.set_xlabel("Hora")
     ax2.set_ylabel("Glucosa (mg/dL)")
     ax2.set_title(f"Evolució temporal de la glucosa - {pacient_seleccionat} ({data_seleccionada})")
@@ -121,3 +122,4 @@ if uploaded_file is not None:
 
 else:
     st.info("Carrega un fitxer CSV per començar.")
+
